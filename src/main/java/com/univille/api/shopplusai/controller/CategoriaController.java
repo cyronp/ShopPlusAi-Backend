@@ -22,7 +22,7 @@ public class CategoriaController {
     @PostMapping
     public ResponseEntity<Categoria> save(@RequestBody @Valid CreateCategoriaRequest dados, UriComponentsBuilder uriBuilder){
         var categoria = service.save(dados);
-        var uri = uriBuilder.path("/{id}").buildAndExpand(categoria.getId()).toUri();
+        var uri = uriBuilder.path("/categoria/{id}").buildAndExpand(categoria.getId()).toUri();
         return ResponseEntity.created(uri).body(categoria);
     }
 
