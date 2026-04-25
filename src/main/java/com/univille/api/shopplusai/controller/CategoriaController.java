@@ -29,4 +29,10 @@ public class CategoriaController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Categoria> getbyId(@PathVariable Long id){
+        var categoria = service.getById(id);
+        return ResponseEntity.ok().body(categoria);
+    }
+
 }
