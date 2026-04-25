@@ -27,4 +27,10 @@ public class UsuarioController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<UsuarioResponse> getById(@PathVariable Long id){
+        var usuarioResponse = service.getById(id);
+        return ResponseEntity.ok().body(usuarioResponse);
+    }
 }
