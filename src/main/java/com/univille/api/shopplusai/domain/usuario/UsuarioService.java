@@ -5,10 +5,10 @@ import com.univille.api.shopplusai.domain.usuario.dto.UsuarioResponse;
 import com.univille.api.shopplusai.infra.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.awt.print.Pageable;
 
 @Service
 @RequiredArgsConstructor
