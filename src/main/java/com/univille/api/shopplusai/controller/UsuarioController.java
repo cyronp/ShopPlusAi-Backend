@@ -22,7 +22,7 @@ public class UsuarioController {
     @PostMapping
     public ResponseEntity<UsuarioResponse> save(@RequestBody @Valid CreateUsuarioRequest dados, UriComponentsBuilder uriBuilder){
         var usuarioResponse = service.save(dados);
-        var uri = uriBuilder.path("/{id}").buildAndExpand(usuarioResponse.id()).toUri();
+        var uri = uriBuilder.path("/usuario/{id}").buildAndExpand(usuarioResponse.id()).toUri();
         return ResponseEntity.created(uri).body(usuarioResponse);
     }
 
