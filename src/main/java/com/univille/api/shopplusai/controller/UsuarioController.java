@@ -18,7 +18,7 @@ public class UsuarioController {
     private final UsuarioService service;
 
     @PostMapping
-    public ResponseEntity<UsuarioResponse> save(@RequestBody CreateUsuarioRequest dados, UriComponentsBuilder uriBuilder){
+    public ResponseEntity<UsuarioResponse> save(@RequestBody @Valid CreateUsuarioRequest dados, UriComponentsBuilder uriBuilder){
         var usuarioResponse = service.save(dados);
         var uri = uriBuilder.path("/{id}").buildAndExpand(usuarioResponse.id()).toUri();
         return ResponseEntity.created(uri).body(usuarioResponse);
