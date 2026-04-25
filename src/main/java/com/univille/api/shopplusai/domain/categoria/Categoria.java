@@ -1,5 +1,6 @@
 package com.univille.api.shopplusai.domain.categoria;
 
+import com.univille.api.shopplusai.domain.categoria.dto.CreateCategoriaRequest;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -19,4 +20,8 @@ public class Categoria {
 
     @Column(nullable = false, unique = true)
     private String nome;
+
+    public Categoria(CreateCategoriaRequest dados) {
+        this.nome = dados.nome();
+    }
 }
