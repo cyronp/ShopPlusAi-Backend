@@ -31,10 +31,4 @@ public class UsuarioService {
                 .orElseThrow(() -> new NotFoundException("Usuário não encontrado"));
         return new UsuarioResponse(usuario);
     }
-
-    public UsuarioResponse getByEmail(String email){
-        var usuario = repository.findByEmail(email)
-                .orElseThrow(() -> new NotFoundException("Usuário não encontrado"));
-        return new UsuarioResponse(usuario);
-    }
 }
