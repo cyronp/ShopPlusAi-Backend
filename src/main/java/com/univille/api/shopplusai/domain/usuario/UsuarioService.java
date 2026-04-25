@@ -4,8 +4,11 @@ import com.univille.api.shopplusai.domain.usuario.dto.CreateUsuarioRequest;
 import com.univille.api.shopplusai.domain.usuario.dto.UsuarioResponse;
 import com.univille.api.shopplusai.infra.exception.NotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.awt.print.Pageable;
 
 @Service
 @RequiredArgsConstructor
@@ -30,5 +33,9 @@ public class UsuarioService {
         var usuario = repository.findById(id)
                 .orElseThrow(() -> new NotFoundException("Usuário não encontrado"));
         return new UsuarioResponse(usuario);
+    }
+
+    public Page<UsuarioResponse> getAll(Pageable paginacao){
+        return repository.findAll(paginacao).map(UsuarioResponse::new);
     }
 }
