@@ -5,6 +5,9 @@ import com.univille.api.shopplusai.domain.usuario.dto.CreateUsuarioRequest;
 import com.univille.api.shopplusai.domain.usuario.dto.UsuarioResponse;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -32,5 +35,11 @@ public class UsuarioController {
     public ResponseEntity<UsuarioResponse> getById(@PathVariable Long id){
         var usuarioResponse = service.getById(id);
         return ResponseEntity.ok().body(usuarioResponse);
+    }
+
+    @GetMapping
+    public ResponseEntity<Page<UsuarioResponse>> getAll(@PageableDefault Pageable paginacao){
+        var page = service.getAll(paginacao);
+        return ResponseEntity.ok().body(page);
     }
 }
