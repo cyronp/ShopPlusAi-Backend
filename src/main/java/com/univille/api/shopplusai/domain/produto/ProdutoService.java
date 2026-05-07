@@ -1,5 +1,6 @@
 package com.univille.api.shopplusai.domain.produto;
 
+import com.univille.api.shopplusai.domain.categoria.CategoriaRepository;
 import com.univille.api.shopplusai.domain.produto.dto.CreateProdutoRequest;
 import com.univille.api.shopplusai.domain.produto.dto.ProdutoResponse;
 import com.univille.api.shopplusai.domain.usuario.dto.CreateUsuarioRequest;
@@ -16,10 +17,17 @@ import org.springframework.transaction.annotation.Transactional;
 public class ProdutoService {
 
     private final ProdutoRepository repository;
+    private final CategoriaRepository categoriaRepository;
 
     @Transactional
     public ProdutoResponse save(CreateProdutoRequest dados){
-        var produto = new Produto(dados);
+
+        var categoria = categoriaRepository.findById(dados.idCategoria())
+                        .orElseThrow(() -> new NotFoundException("Não existe nenhuma categoria com esse id"));
+        var produto = new Produto();
+        produto.setNome(dados.nome());
+        produto.setCategoria(categoria);
+        produto.setPreco(dados.preco());
         repository.save(produto);
         return new ProdutoResponse(produto);
     }
