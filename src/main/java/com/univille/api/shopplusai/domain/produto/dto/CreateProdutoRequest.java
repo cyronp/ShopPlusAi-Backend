@@ -1,16 +1,17 @@
 package com.univille.api.shopplusai.domain.produto.dto;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record CreateProdutoRequest (
 
         @NotBlank
         String nome,
 
-        @NotBlank
+        @NotNull
         Long idCategoria,
 
-        @NotBlank
+        @NotNull
         double preco)
 {
 }

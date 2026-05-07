@@ -1,6 +1,7 @@
 package com.univille.api.shopplusai.domain.produto;
 
 
+import com.univille.api.shopplusai.domain.categoria.Categoria;
 import com.univille.api.shopplusai.domain.produto.dto.CreateProdutoRequest;
 import jakarta.persistence.*;
 import lombok.*;
@@ -23,15 +24,11 @@ public class Produto{
     @Column(nullable = false)
     private String nome;
 
-    @Column(nullable = false, name = "id_categoria")
-    private Long idCategoria;
+    @ManyToOne
+    @JoinColumn (nullable = false, name = "id_categoria")
+    private Categoria categoria;
 
     @Column(nullable = false)
     private double preco;
 
-    public Produto(CreateProdutoRequest dados){
-        this.nome = dados.nome();
-        this.idCategoria = dados.idCategoria();
-        this.preco = dados.preco();
-    }
 }
