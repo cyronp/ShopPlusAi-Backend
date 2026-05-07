@@ -11,10 +11,11 @@ public class GeminiClient {
 
     private final ChatClient chatClient;
 
-    public String perguntar(String pergunta){
+    public String chat(String promptSystem, String promptUser){
 
         return chatClient.prompt()
-                .user(pergunta)
+                .system(promptSystem)
+                .user(promptUser)
                 .call()
                 .content();
     }
