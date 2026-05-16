@@ -49,16 +49,24 @@ public class ChatbotService {
         var produtos = produtoService.getAllProdutos();
 
         var systemPrompt = promptBuilder.systemPrompt();
-        var userPrompt = promptBuilder.contextPrompt(pergunta, getAllById(conversation), avaliacoes, produtos);
-        memoryService.saveUserMessage(conversation, userPrompt);
+        var userPrompt = promptBuilder.contextPrompt(pergunta, getAllConversations(conversation.getId()), avaliacoes, produtos);
+        var messageUser = memoryService.saveUserMessage(conversation, pergunta);
 
         var iaResponse = geminiClient.chat(systemPrompt, userPrompt);
-        memoryService.saveAssistantMessage(conversation, iaResponse);
+        var messageAssistent = memoryService.saveAssistantMessage(conversation, iaResponse);
 
-        return new ChatResponse(conversation.getId(), iaResponse);
+        return new ChatResponse(messageAssistent);
     }
 
-    public List<ChatMessage> getAllById(ChatConversation conversation){
+    public List<ChatResponse> getAllMessagesByConversationId(String id){
+        return getAllConversations(UUID.fromString(id))
+                .stream()
+                .map(ChatResponse::new)
+                .toList();
+    }
+
+    public List<ChatMessage> getAllConversations(UUID conversationId){
+        var conversation = conversationRepository.getReferenceById(conversationId);
         return repository.findAllByConversation(conversation);
     }
 

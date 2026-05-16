@@ -11,7 +11,7 @@ public class ChatMemoryService {
 
     private final ChatMessageRepository repository;
 
-    public void saveUserMessage(
+    public ChatMessage saveUserMessage(
             ChatConversation conversation,
             String mensagem
     ){
@@ -23,10 +23,11 @@ public class ChatMemoryService {
         message.setContent(mensagem);
         message.setCreatedAt(LocalDateTime.now());
 
-        repository.save(message);
+        message = repository.save(message);
+        return message;
     }
 
-    public void saveAssistantMessage(
+    public ChatMessage saveAssistantMessage(
             ChatConversation conversation,
             String mensagem
     ){
@@ -38,6 +39,7 @@ public class ChatMemoryService {
         message.setContent(mensagem);
         message.setCreatedAt(LocalDateTime.now());
 
-        repository.save(message);
+        message = repository.save(message);
+        return message;
     }
 }
