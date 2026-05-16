@@ -14,7 +14,6 @@ import lombok.*;
 @Setter
 @ToString
 @EqualsAndHashCode
-
 public class Produto{
 
     @Id
