@@ -2,6 +2,7 @@ package com.univille.api.shopplusai.ai.chatbot;
 
 import com.univille.api.shopplusai.ai.chatbot.dto.ChatRequest;
 import com.univille.api.shopplusai.ai.chatbot.dto.ChatResponse;
+import com.univille.api.shopplusai.ai.chatbot.dto.ConversationsUserResponse;
 import com.univille.api.shopplusai.domain.avaliacao.AvaliacaoService;
 import com.univille.api.shopplusai.domain.produto.ProdutoService;
 import com.univille.api.shopplusai.domain.usuario.Usuario;
@@ -49,7 +50,7 @@ public class ChatbotService {
         var produtos = produtoService.getAllProdutos();
 
         var systemPrompt = promptBuilder.systemPrompt();
-        var userPrompt = promptBuilder.contextPrompt(pergunta, getAllConversations(conversation.getId()), avaliacoes, produtos);
+        var userPrompt = promptBuilder.contextPrompt(pergunta, getAllMessages(conversation.getId()), avaliacoes, produtos);
         var messageUser = memoryService.saveUserMessage(conversation, pergunta);
 
         var iaResponse = geminiClient.chat(systemPrompt, userPrompt);
@@ -59,15 +60,26 @@ public class ChatbotService {
     }
 
     public List<ChatResponse> getAllMessagesByConversationId(String id){
-        return getAllConversations(UUID.fromString(id))
+        return getAllMessages(UUID.fromString(id))
                 .stream()
                 .map(ChatResponse::new)
                 .toList();
     }
 
-    public List<ChatMessage> getAllConversations(UUID conversationId){
+    public List<ChatMessage> getAllMessages(UUID conversationId){
         var conversation = conversationRepository.getReferenceById(conversationId);
         return repository.findAllByConversation(conversation);
+    }
+
+    public List<ConversationsUserResponse> getAllConversationsByUsuarioId(Long usuarioId){
+
+        Usuario usuario = usuarioRepository.findById(usuarioId)
+                .orElseThrow(() -> new NotFoundException("Usuário não encontrado com o id informado"));
+
+        var conversations= conversationRepository.findAllByUsuarioId(usuarioId);
+        return conversations.stream()
+                .map(ConversationsUserResponse::new)
+                .toList();
     }
 
 }
