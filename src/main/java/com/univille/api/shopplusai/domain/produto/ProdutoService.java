@@ -12,6 +12,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class ProdutoService {
@@ -47,5 +49,9 @@ public class ProdutoService {
 
     public Page<ProdutoResponse> getAll(Pageable paginacao){
         return repository.findAll(paginacao).map(ProdutoResponse::new);
+    }
+
+    public List<Produto> getAllProdutos(){
+        return repository.findAll();
     }
 }

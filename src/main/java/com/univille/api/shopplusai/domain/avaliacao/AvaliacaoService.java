@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
@@ -56,5 +57,9 @@ public class AvaliacaoService {
 
     public Page<AvaliacaoResponse> getAll(Pageable paginacao){
         return repository.findAll(paginacao).map(AvaliacaoResponse::new);
+    }
+
+    public List<Avaliacao> getAllAvaliacoes(){
+        return repository.findAll();
     }
 }
