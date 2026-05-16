@@ -21,23 +21,32 @@ public class ChatbotService {
     private final GeminiClient geminiClient;
     private final ChatMessageRepository repository;
 
-    public ChatResponse chat(String pergunta){
+    public ChatResponse chat(String pergunta, String conversationId){
 
-        UUID uuid = UUID.randomUUID();
-        String conversationId = uuid.toString();
+        if(conversationId == null){
+            UUID uuid = UUID.randomUUID();
+            conversationId = uuid.toString();
+
+        }
 
         var avaliacoes = avaliacaoService.getAllAvaliacoes();
         var produtos = produtoService.getAllProdutos();
 
         var systemPrompt = promptBuilder.systemPrompt();
+        var userPrompt = promptBuilder.contextPrompt(pergunta, getAllById(conversationId), avaliacoes, produtos);
 
-        var message = promptBuilder.contextPrompt(pergunta, getAll(), avaliacoes, produtos);
+        memoryService.saveUserMessage(conversationId, userPrompt);
 
+        var iaResponse = geminiClient.chat(systemPrompt, userPrompt);
+
+        memoryService.saveAssistantMessage(conversationId, iaResponse);
+
+        return new ChatResponse();
 
     }
 
-    public List<ChatMessage> getAll(){
-        return repository.findAll();
+    public List<ChatMessage> getAllById(String conversationId){
+        return repository.findAllByConversationId(conversationId);
     }
 
 }
