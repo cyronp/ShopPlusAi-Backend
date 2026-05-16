@@ -48,4 +48,10 @@ public class GlobalExceptionHandler {
         var responseError = new ErrorResponse(HttpStatus.METHOD_NOT_ALLOWED.value(), e.getMessage(), null);
         return ResponseEntity.status(HttpStatus.METHOD_NOT_ALLOWED.value()).body(responseError);
     }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<ErrorResponse> handleIllegalArgumentException(IllegalArgumentException e){
+        var responseError = new ErrorResponse(HttpStatus.BAD_REQUEST.value(), e.getMessage(), null);
+        return ResponseEntity.badRequest().body(responseError);
+    }
 }

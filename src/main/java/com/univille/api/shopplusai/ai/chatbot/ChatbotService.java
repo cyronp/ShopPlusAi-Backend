@@ -62,7 +62,11 @@ public class ChatbotService {
     }
 
     public List<ChatResponse> getAllMessagesByConversationId(String id){
-        return getAllMessages(UUID.fromString(id))
+
+        var conversation = conversationRepository.findById(UUID.fromString(id))
+                .orElseThrow(() -> new NotFoundException("Conversa com o id informado não encontrada"));
+
+        return getAllMessages(conversation.getId())
                 .stream()
                 .map(ChatResponse::new)
                 .toList();
