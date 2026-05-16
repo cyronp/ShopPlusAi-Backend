@@ -1,0 +1,495 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Requisições
+meta:
+  id: wrk_d01cebbe6b0140bca211b6d7d85f77d8
+  created: 1777131901057
+  modified: 1777131922089
+  description: ""
+collection:
+  - name: Usuarios
+    meta:
+      id: fld_565a3f75f0da41c08b23750ce586def2
+      created: 1777141031513
+      modified: 1777141031513
+      sortKey: -1777141031513
+      description: ""
+    children:
+      - url: http://localhost:8080/usuario
+        name: Criar usuario
+        meta:
+          id: req_38d7ad391011478eb9249a4fdffd50d9
+          created: 1777131947577
+          modified: 1777141040457
+          isPrivate: false
+          description: ""
+          sortKey: -1777141040435
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome" : "",
+            	"email" : "davi@email.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuario
+        name: Listar usuarios
+        meta:
+          id: req_1de748e1f7eb47458f79bc565f358053
+          created: 1777132108916
+          modified: 1777141049812
+          isPrivate: false
+          description: ""
+          sortKey: -1777141040635
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuario/3
+        name: Detalhar usuario
+        meta:
+          id: req_2e2620e7bdef41a39a0971e1455b6dcf
+          created: 1777132559336
+          modified: 1777141047673
+          isPrivate: false
+          description: ""
+          sortKey: -1777141040535
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/usuario/2
+        name: Deletar usuario
+        meta:
+          id: req_0daafd1142e84ba6b64b04c473c1d709
+          created: 1777141290099
+          modified: 1777141306825
+          isPrivate: false
+          description: ""
+          sortKey: -1777141040735
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Categorias
+    meta:
+      id: fld_330de6b5838a403cb6b7bd5768c72373
+      created: 1777141065597
+      modified: 1777141065597
+      sortKey: -1777141065597
+      description: ""
+    children:
+      - url: http://localhost:8080/categoria
+        name: Criar categoria
+        meta:
+          id: req_2e5b6591bea94d92a417d41c14efcd9c
+          created: 1777141070499
+          modified: 1778965245974
+          isPrivate: false
+          description: ""
+          sortKey: -1777141072946
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome" : "Eletronicos"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categoria/1
+        name: Obter categoria
+        meta:
+          id: req_b68e2b3c7aef4cf0864dcf75dd79af88
+          created: 1777141165811
+          modified: 1777141205671
+          isPrivate: false
+          description: ""
+          sortKey: -1777141073046
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categoria/2
+        name: Deleter categoria
+        meta:
+          id: req_eaba210e6fe542738f4b794af26539ea
+          created: 1777141236651
+          modified: 1777141262452
+          isPrivate: false
+          description: ""
+          sortKey: -1777141073146
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/categoria
+        name: Listar categorias
+        meta:
+          id: req_8b498d3e70b3482db675709506b21130
+          created: 1777141265657
+          modified: 1777141286761
+          isPrivate: false
+          description: ""
+          sortKey: -1777141073246
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: ChatBot
+    meta:
+      id: fld_66de646322874e96b7e55d2a7266af8d
+      created: 1778945805216
+      modified: 1778945805216
+      sortKey: -1778945805216
+      description: ""
+    children:
+      - url: http://localhost:8080/chat
+        name: Enviar mensagem
+        meta:
+          id: req_3fd297528dd541aa8e43c9da9197b146
+          created: 1778945811463
+          modified: 1778956655939
+          isPrivate: false
+          description: ""
+          sortKey: -1778945811463
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"usuarioId" : 1,
+            	"question" : "Vc tem alguma info relevante pra mim do tenis nike court royale?"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/chat/49b3e706-2026-4d3a-891d-2b732c7fd6f5
+        name: Obter Conversa
+        meta:
+          id: req_b16bb0832d7b4c8fb32a2de2259e7456
+          created: 1778949336836
+          modified: 1778959117965
+          isPrivate: false
+          description: ""
+          sortKey: -1778949336836
+        method: GET
+        body:
+          mimeType: application/json
+          text: ""
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/chat?usuarioId=1
+        name: Obter Conversas Por Usuario
+        meta:
+          id: req_7979b93c1590496d956022ec79df8cc0
+          created: 1778957383107
+          modified: 1778957412294
+          isPrivate: false
+          description: ""
+          sortKey: -1778957383107
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/chat/6b37f418-3425-4667-bc98-611fa683a9d0
+        name: Deletar Conversa
+        meta:
+          id: req_2ffb1790e63d4fcfb2736bd91def2b1e
+          created: 1778957419064
+          modified: 1778957725678
+          isPrivate: false
+          description: ""
+          sortKey: -1778957419064
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Produtos
+    meta:
+      id: fld_52a352388fbc4ca08eae9cb99979c933
+      created: 1778947595921
+      modified: 1778947599752
+      sortKey: -1777537347937
+      description: ""
+    children:
+      - url: http://localhost:8080/produto
+        name: Criar produto
+        meta:
+          id: req_0a7b42fe21aa40518f9f72ee22f81f30
+          created: 1778947618556
+          modified: 1778965274005
+          isPrivate: false
+          description: ""
+          sortKey: -1778947618556
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nome" : "Computador Gamer",
+            	"idCategoria" : 4,
+            	"preco" : 720.8
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/produto
+        name: New Request
+        meta:
+          id: req_582434595607454786b279a67517d754
+          created: 1778964987448
+          modified: 1778965001509
+          isPrivate: false
+          description: ""
+          sortKey: -1778964987448
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Avaliacoes
+    meta:
+      id: fld_b8a57361774c4d72927a47a87026bc02
+      created: 1778947734255
+      modified: 1778947736655
+      sortKey: -1778945805266
+      description: ""
+    children:
+      - url: http://localhost:8080/avaliacoes
+        name: Criar avaliacao
+        meta:
+          id: req_e0a4ab7a7130491f8cebf8497930ca7e
+          created: 1778965287296
+          modified: 1778965804261
+          isPrivate: false
+          description: ""
+          sortKey: -1778965287296
+        method: POST
+        body:
+          mimeType: application/json
+          text: >-
+            {
+            	"idProduto" : 3,
+            	"comentario" : "o melhor pc onde ja joguei, excelente demais, o produto mais top de todos que ja tive, se vc nao comprou esta perdendo tempo, compre e nao ira se arrepender nunca",
+            	"idUsuario": 1,
+            	"data" : "2026-03-16"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Feeling
+    meta:
+      id: fld_b3223af2f1ef4ced8c4ee05589b37809
+      created: 1778964917933
+      modified: 1778964917933
+      sortKey: -1778964917933
+      description: ""
+    children:
+      - url: http://localhost:8080/feeling?mes=3&ano=2026
+        name: Analisar Sentimento
+        meta:
+          id: req_9fd5ce8461ce4ab887e2e0bc5cc693ae
+          created: 1778964921121
+          modified: 1778966101493
+          isPrivate: false
+          description: ""
+          sortKey: -1778964921121
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/12.5.0
+            description: ""
+            disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_e0c3138b8c423213b2623fa68621cbd6adc1bc37
+    created: 1777131901069
+    modified: 1777131901069
+environments:
+  name: Base Environment
+  meta:
+    id: env_e0c3138b8c423213b2623fa68621cbd6adc1bc37
+    created: 1777131901061
+    modified: 1777131901061
+    isPrivate: false
