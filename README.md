@@ -4,8 +4,7 @@ Backend de e-commerce inteligente com integração com IA
 para análise de dados, avaliações de produtos e insights automatizados.
 
 <details>
-
-## Sobre o projeto
+<summary> Sobre o projeto </summary>
 
 O ShopPlusAI Backend é uma API REST desenvolvida com foco em um sistema de e-commerce moderno, que além das funcionalidades tradicionais (produtos, usuários, avaliações), utiliza Inteligência Artificial para análise de sentimentos e geração de insights a partir de avaliações de produtos.
 
@@ -16,8 +15,8 @@ Ele não possuí as funcionalidades básicas de um e-commerce, apenas de cadastr
 </details>
 
 <details>
+<summary> Funcionalidades </summary>
 
-## Funcionalidades
 
 * Usuarios - CRUD básico;
 * Produtos - CRUD, organização por categoria;
@@ -32,8 +31,8 @@ Ele não possuí as funcionalidades básicas de um e-commerce, apenas de cadastr
 
 
 <details>
+<summary> IA no Projeto </summary>
 
-## IA no Projeto
 
 O sistema possuí módulo de IA completo responsável por:
 * Interpretar avaliações de usuários;
@@ -44,8 +43,8 @@ O sistema possuí módulo de IA completo responsável por:
 </details>
 
 <details>
+<summary> Tecnologias Utilizadas </summary>
 
-## Tecnologias Utilizadas
 
 * Java 17
 * Spring Boot 3.5.14
@@ -58,8 +57,8 @@ O sistema possuí módulo de IA completo responsável por:
 </details>
 
 <details>
+<summary> Como executar o projeto </summary>
 
-## Como executar o projeto
 
 #### Pré-requisitos
 * Java 17+
