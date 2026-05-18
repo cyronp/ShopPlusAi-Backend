@@ -2,7 +2,7 @@
 
 Backend de e-commerce inteligente com integração com IA
 para análise de dados, avaliações de produtos e insights automatizados.
-
+---
 <details>
 <summary> Sobre o projeto </summary>
 
@@ -13,7 +13,7 @@ O objetivo do projeto é simular um ambiente real de plataforma de vendas com ca
 Ele não possuí as funcionalidades básicas de um e-commerce, apenas de cadastrar informações e focado em análise com IA.
 
 </details>
-
+---
 <details>
 <summary> Funcionalidades </summary>
 
@@ -28,7 +28,7 @@ Ele não possuí as funcionalidades básicas de um e-commerce, apenas de cadastr
   * Base para dashboards inteligentes;
 
 </details>
-
+---
 
 <details>
 <summary> IA no Projeto </summary>
@@ -41,7 +41,7 @@ O sistema possuí módulo de IA completo responsável por:
 * Apoiar decisões de negócio com base nos dados coletados;
 
 </details>
-
+---
 <details>
 <summary> Tecnologias Utilizadas </summary>
 
@@ -55,7 +55,7 @@ O sistema possuí módulo de IA completo responsável por:
 * Gemini Client
 
 </details>
-
+---
 <details>
 <summary> Como executar o projeto </summary>
 
