@@ -3,6 +3,8 @@
 Backend de e-commerce inteligente com integração com IA
 para análise de dados, avaliações de produtos e insights automatizados.
 
+<details>
+
 ## Sobre o projeto
 
 O ShopPlusAI Backend é uma API REST desenvolvida com foco em um sistema de e-commerce moderno, que além das funcionalidades tradicionais (produtos, usuários, avaliações), utiliza Inteligência Artificial para análise de sentimentos e geração de insights a partir de avaliações de produtos.
@@ -10,6 +12,10 @@ O ShopPlusAI Backend é uma API REST desenvolvida com foco em um sistema de e-co
 O objetivo do projeto é simular um ambiente real de plataforma de vendas com capacidade de análise inteligente de dados.
 
 Ele não possuí as funcionalidades básicas de um e-commerce, apenas de cadastrar informações e focado em análise com IA.
+
+</details>
+
+<details>
 
 ## Funcionalidades
 
@@ -22,6 +28,11 @@ Ele não possuí as funcionalidades básicas de um e-commerce, apenas de cadastr
   * Geração de insights sobre os produtos;
   * Base para dashboards inteligentes;
 
+</details>
+
+
+<details>
+
 ## IA no Projeto
 
 O sistema possuí módulo de IA completo responsável por:
@@ -29,6 +40,10 @@ O sistema possuí módulo de IA completo responsável por:
 * Classificar sentimento (positivo, neutro, negativo);
 * Gerar respostas estruturadas para consumo no backend;
 * Apoiar decisões de negócio com base nos dados coletados;
+
+</details>
+
+<details>
 
 ## Tecnologias Utilizadas
 
@@ -39,6 +54,10 @@ O sistema possuí módulo de IA completo responsável por:
 * Bean Validation
 * Lombok
 * Gemini Client
+
+</details>
+
+<details>
 
 ## Como executar o projeto
 
@@ -112,3 +131,5 @@ o arquivo está disponivel no repositório:
 ````http-explyt
 /docs/insominia/shopplus-insominia.yaml
 ````
+
+</details>
